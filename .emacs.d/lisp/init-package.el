@@ -139,7 +139,145 @@
 ;(keymap-set dired-mode-map "C-b" dired-up-directory)
 ;(keymap-set dired-mode-map "C-f" dired-find-file)
 ;(keymap-set dired-mode-map "x" dired-do-flagged-delete)
+(setq dirvish-attributes
+      ;;'(vc-state subtree-state all-the-icons collapse git-msg file-time file-size))
+      '(vc-state subtree-state vscode-icon collapse git-msg file-time file-size))
+;(setq dirvish-attributes '(all-the-icons file-size))
+
+;(setq dirvish-attributes
+;      '(vscode-icon))
+(setq dirvish-icon-size 16)
 
 (dirvish-override-dired-mode)
+
+
+(use-package dirvish
+  :init
+  (dirvish-override-dired-mode)
+  :custom
+  (dirvish-quick-access-entries ; It's a custom option, `setq' won't work
+    '(("h" "~/"                       "Home")
+      ("d" "~/Desktop"                "Desktop")
+      ("p" "~/projects"               "projects")))
+
+  :config
+  (setq dirvish-attributes
+    '(vc-state nerd-icons subtree-state collapse git-msg file-size))
+;  (setq dirvish-subtree-state-style 'nerd)
+;  (setq delete-by-moving-to-trash t)
+ 
+  ; (setq dirvish-path-separators (list
+  ;                                (format "  %s " (nerd-icons-codicon "nf-cod-home"))
+  ;                                (format "  %s " (nerd-icons-codicon "nf-cod-root_folder"))
+  ;                                (format " %s " (nerd-icons-faicon "nf-fa-angle_right"))))
+
+  :bind ; Bind `dirvish|dirvish-side|dirvish-dwim' as you see fit
+  (("C-c f" . dirvish-fd)
+   :map dirvish-mode-map ; Dirvish inherits `dired-mode-map'
+   ("a"   . dirvish-quick-access)
+   ("f"   . dirvish-file-info-menu)
+   ("y"   . dirvish-yank-menu)
+   ("N"   . dirvish-narrow)
+   ("^"   . dirvish-history-last)
+   ("h"   . dirvish-history-jump) ; remapped `describe-mode'
+   ("s"   . dirvish-quicksort)    ; remapped `dired-sort-toggle-or-edit'
+   ("v"   . dirvish-vc-menu)      ; remapped `dired-view-file'
+   ("TAB" . dirvish-subtree-toggle)
+   ("M-f" . dirvish-history-go-forward)
+   ("M-b" . dirvish-history-go-backward)
+   ("M-l" . dirvish-ls-switches-menu)
+   ("M-m" . dirvish-mark-menu)
+   ("M-t" . dirvish-layout-toggle)
+   ("M-s" . dirvish-setup-menu)
+   ("M-e" . dirvish-emerge-menu)
+   ("M-j" . dirvish-fd-jump)))
+
+
+(setq dirvish-use-header-line 'global)    ; make header line span all panes
+(setq dirvish-header-line-height '(25 . 35))
+(setq dirvish-mode-line-height 25) ; shorthand for '(25 . 25)
+(setq dirvish-header-line-format
+      '(:left (path) :right (free-space))
+      dirvish-mode-line-format
+      '(:left (sort file-time " " file-size symlink) :right (omit yank index)))
+
+(use-package dired-subtree
+    :ensure t
+    :after dired
+    :bind (:map dired-mode-map
+        ("<tab>" . dired-subtree-toggle)))
+
+
+
+; (use-package dirvish
+;   :init
+;   (dirvish-override-dired-mode)
+;   :custom
+;   (dirvish-quick-access-entries ; It's a custom option, `setq' won't work
+;    '(("h" "~/"                          "Home")
+;      ("d" "~/Downloads/"                "Downloads")
+;      ("m" "/mnt/"                       "Drives")
+;      ("t" "~/.local/share/Trash/files/" "TrashCan")))
+;   :config
+;   ;; (dirvish-peek-mode) ; Preview files in minibuffer
+;   ;; (dirvish-side-follow-mode) ; similar to `treemacs-follow-mode'
+;   (setq dirvish-mode-line-format
+;         '(:left (sort symlink) :right (omit yank index)))
+;   (setq dirvish-attributes
+;         '(all-the-icons file-time file-size collapse subtree-state vc-state git-msg))
+;   (setq delete-by-moving-to-trash t)
+;   (setq dired-listing-switches
+;         "-l --almost-all --human-readable --group-directories-first --no-group")
+;   :bind ; Bind `dirvish|dirvish-side|dirvish-dwim' as you see fit
+;   (("C-c f" . dirvish-fd)
+;    :map dirvish-mode-map ; Dirvish inherits `dired-mode-map'
+;    ("a"   . dirvish-quick-access)
+;    ("f"   . dirvish-file-info-menu)
+;    ("y"   . dirvish-yank-menu)
+;    ("N"   . dirvish-narrow)
+;    ("^"   . dirvish-history-last)
+;    ("h"   . dirvish-history-jump) ; remapped `describe-mode'
+;    ("s"   . dirvish-quicksort)    ; remapped `dired-sort-toggle-or-edit'
+;    ("v"   . dirvish-vc-menu)      ; remapped `dired-view-file'
+;    ("TAB" . dirvish-subtree-toggle)
+;    ("M-f" . dirvish-history-go-forward)
+;    ("M-b" . dirvish-history-go-backward)
+;    ("M-l" . dirvish-ls-switches-menu)
+;    ("M-m" . dirvish-mark-menu)
+;    ("M-t" . dirvish-layout-toggle)
+;    ("M-s" . dirvish-setup-menu)
+;    ("M-e" . dirvish-emerge-menu)
+;    ("M-j" . dirvish-fd-jump)))
+
+
+
+
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "M-p") 'projectile-command-map)
+
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1))
+
+; (use-package doom-modeline
+;   :ensure t
+;   :hook (after-init . doom-modeline-mode))
+
+
+
+(use-package vim-tab-bar
+  :ensure t
+  :commands vim-tab-bar-mode
+  :hook
+  (after-init . vim-tab-bar-mode))
+(setq tab-bar-close-button-show t)       ;; hide tab close / X button
+
+;;----------
+;tab bar settings
+(global-set-key (kbd "M-{") 'tab-bar-switch-to-prev-tab)
+(global-set-key (kbd "M-}") 'tab-bar-switch-to-next-tab)
+(global-set-key (kbd "M-t") 'tab-bar-new-tab)
+(global-set-key (kbd "M-w") 'tab-bar-close-tab)
+;;----------
 
 (provide 'init-package)

@@ -30,15 +30,16 @@
 	sml/theme 'respectful)
   (sml/setup))
 
-(set-face-attribute 'default nil :height 170 :weight 'regular)
+(set-face-attribute 'default nil :height 150 :weight 'regular)
 (setq default-frame-alist '(
 							(left . 0)
 							(width . 0)
 							(fullscreen . maximized)))
 
 (setq make-backup-files nil)
-(setq auto-save-mode nil)
+(setq auto-save-mode t)
 (setq auto-save-default nil)
 (setq backup-inhibit-lock t)
+(desktop-save-mode 1)
 
 (provide 'init-ui)
