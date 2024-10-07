@@ -21,8 +21,13 @@
  ;   :config
  ;   (load-theme 'timu-spacegrey-dark t))
   
-(load-theme 'timu-spacegrey t)
-(customize-set-variable 'timu-spacegrey-flavour 'dark)
+;(load-theme 'timu-spacegrey t)
+;(customize-set-variable 'timu-spacegrey-flavour "light")
+
+;(load-theme 'timu-macos t)
+;(customize-set-variable 'timu-macos-flavour "light")
+
+;(load-theme 'dracula t)
 
 (use-package smart-mode-line
   :init
@@ -30,16 +35,22 @@
 	sml/theme 'respectful)
   (sml/setup))
 
-(set-face-attribute 'default nil :height 150 :weight 'regular)
-(setq default-frame-alist '(
-							(left . 0)
-							(width . 0)
-							(fullscreen . maximized)))
+(set-face-attribute 'default nil :height 140 :weight 'regular)
+; (setq default-frame-alist '(
+;  							(left . 0)
+;  							(width . 0)
+;  							(fullscreen . maximized)))
+(set-frame-font "MesloLGS NF" nil t) 
 
-(setq make-backup-files nil)
-(setq auto-save-mode t)
-(setq auto-save-default nil)
-(setq backup-inhibit-lock t)
-(desktop-save-mode 1)
+;(setq make-backup-files nil)
+;(setq auto-save-default nil)
+;(setq backup-inhibit-lock t)
+;(setq auto-save-mode t)
+;(desktop-save-mode 1)
+
+(setq url-proxy-services '(("no_proxy" . "^\\(localhost\\|10\\..*\\|192\\.168\\..*\\)") ("http" . "127.0.0.1:7890") ("https" . "127.0.0.1:7890")))
+
+;(with-proxy
+;  (call-interactively #'all-the-icons-install-fonts))
 
 (provide 'init-ui)
