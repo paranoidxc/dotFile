@@ -1,50 +1,4 @@
-; (use-package gruvbox-theme
-;              :init (load-theme 'gruvbox-dark-soft t))
-
-;(load-theme 'dracula t)
-
-; (use-package timu-macos-theme
-;    :ensure t
-;    :config
-;    (load-theme 'timu-macos t))
-;
-; (load-theme 'timu-macos t)
-; (customize-set-variable 'timu-macos-flavour 'dark)
-; (customize-set-variable 'timu-macos-scale-org-document-title 1.8)
-; (customize-set-variable 'timu-macos-scale-org-document-info 1.4)
-; (customize-set-variable 'timu-macos-scale-org-level-1 1.8)
-; (customize-set-variable 'timu-macos-scale-org-level-2 1.4)
-; (customize-set-variable 'timu-macos-scale-org-level-3 1.2)
-
- ; (use-package timu-spacegrey-theme
- ;   :ensure t
- ;   :config
- ;   (load-theme 'timu-spacegrey-dark t))
-
-;(load-theme 'timu-spacegrey t)
-;(customize-set-variable 'timu-spacegrey-flavour "light")
-
-;(load-theme 'timu-macos t)
-;(customize-set-variable 'timu-macos-flavour "light")
-
-;(load-theme 'dracula t)
-
-;(use-package mindre-theme
-;    :ensure t
-;    :custom
-;    (mindre-use-more-bold nil)
-;    (mindre-use-faded-lisp-parens t)
-;    :config
-;    (load-theme 'mindre t))
-
-;(setq mindre-use-more-bold t
-;      mindre-use-more-fading t
-;      mindre-use-faded-lisp-parens t
-;      mindre-faded-lisp-parens-modes '(emacs-lisp-mode lisp-mode scheme-mode racket-mode))
-
-
 (load-theme 'spacemacs-light t)
-
 
 (use-package smart-mode-line
   :init
@@ -61,7 +15,7 @@
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
 
-(set-face-attribute 'default nil :height 240 :weight 'regular)
+(set-face-attribute 'default nil :height 160 :weight 'regular)
 ; (setq default-frame-alist '(
 ;  							(left . 0)
 ;  							(width . 0)
@@ -74,8 +28,8 @@
 ; 关闭自动生产的保存文件
 (setq auto-save-default nil)
 (setq backup-inhibit-lock t)
-(setq auto-save-mode t)
-(desktop-save-mode 1)
+;(setq auto-save-mode t)
+;(desktop-save-mode 1)
 
 (setq url-proxy-services '(("no_proxy" . "^\\(localhost\\|10\\..*\\|192\\.168\\..*\\)") ("http" . "127.0.0.1:7890") ("https" . "127.0.0.1:7890")))
 
