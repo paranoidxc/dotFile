@@ -1,9 +1,10 @@
 # DevConf
-nvim&amp;&amp;emacs
 
+nvim&amp;&amp;emacs
 
 ## emacs
 
+git clone --depth 1 https://github.com/emacs-evil/evil.git
 
 M-x package-install <RET> dracula-theme
 
@@ -14,6 +15,8 @@ M-x package-install
 projectile
 
 php-mode
+
+M-x package-install RET spacemacs-theme
 
 drivish
 For now Dirvish ships with these attributes:
@@ -30,4 +33,3 @@ For now Dirvish ships with these attributes:
 --- MacOS
 
 brew install coreutils fd poppler ffmpegthumbnailer mediainfo imagemagick
-
