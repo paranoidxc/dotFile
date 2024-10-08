@@ -1,16 +1,23 @@
 (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp")))
 
 
-;(load (expand-file-name ("/~/.emacs.d/custom.el")))
-(load "/Users/xc/.emacs.d/lisp/custom.el")
-
 (require 'init-const)
 (require 'init-kbd)
 (require 'init-startup)
 (require 'init-elpa)
 (require 'init-package)
 (require 'init-ml)
-;(require 'custom)
+
+(setq mycustom-file (expand-file-name "~/.emacs.d/lisp/custom.el"))
+(load mycustom-file)
+
+(setq custom-file (expand-file-name "~/.emacs.d/custom.el"))
+(load custom-file 'no-error 'no-message)
+
+
+; 自动加载外部修改过的文件
+(global-auto-revert-mode 1)
+
 
 (setq tab-bar-close-button-show nil)       ;; hide tab close / X button
 (setq tab-bar-new-button-show nil)       ;; hide tab close / X button
@@ -29,4 +36,10 @@
 
 (require 'init-ui)
 
+;; 快速打开配置文件
+(defun open-init-file()
+  (interactive)
+  (find-file "~/.emacs.d/init.el"))
 
+;; 这一行代码，将函数 open-init-file 绑定到 <f2> 键上
+(global-set-key (kbd "<f2>") 'open-init-file)

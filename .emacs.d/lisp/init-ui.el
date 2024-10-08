@@ -20,7 +20,7 @@
  ;   :ensure t
  ;   :config
  ;   (load-theme 'timu-spacegrey-dark t))
-  
+
 ;(load-theme 'timu-spacegrey t)
 ;(customize-set-variable 'timu-spacegrey-flavour "light")
 
@@ -29,21 +29,51 @@
 
 ;(load-theme 'dracula t)
 
+;(use-package mindre-theme
+;    :ensure t
+;    :custom
+;    (mindre-use-more-bold nil)
+;    (mindre-use-faded-lisp-parens t)
+;    :config
+;    (load-theme 'mindre t))
+
+;(setq mindre-use-more-bold t
+;      mindre-use-more-fading t
+;      mindre-use-faded-lisp-parens t
+;      mindre-faded-lisp-parens-modes '(emacs-lisp-mode lisp-mode scheme-mode racket-mode))
+
+
+(load-theme 'spacemacs-light t)
+;(customize-set-variable 'spacemacs-macos-flavour "light")
+
+
 (use-package smart-mode-line
   :init
   (setq sml/no-confirm-load-theme t
 	sml/theme 'respectful)
   (sml/setup))
 
-(set-face-attribute 'default nil :height 140 :weight 'regular)
+
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-item 10)
+
+;; 这个快捷键绑定可以用之后的插件 counsel 代替
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
+
+
+(set-face-attribute 'default nil :height 240 :weight 'regular)
 ; (setq default-frame-alist '(
 ;  							(left . 0)
 ;  							(width . 0)
 ;  							(fullscreen . maximized)))
-(set-frame-font "MesloLGS NF" nil t) 
+(global-hl-line-mode 1)
+(set-frame-font "MesloLGS NF" nil t)
 
-;(setq make-backup-files nil)
-;(setq auto-save-default nil)
+; 关闭自动生产的备份文件
+(setq make-backup-files nil)
+; 关闭自动生产的保存文件
+(setq auto-save-default nil)
 ;(setq backup-inhibit-lock t)
 ;(setq auto-save-mode t)
 ;(desktop-save-mode 1)
