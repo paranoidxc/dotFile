@@ -44,7 +44,6 @@
 
 
 (load-theme 'spacemacs-light t)
-;(customize-set-variable 'spacemacs-macos-flavour "light")
 
 
 (use-package smart-mode-line
@@ -74,9 +73,9 @@
 (setq make-backup-files nil)
 ; 关闭自动生产的保存文件
 (setq auto-save-default nil)
-;(setq backup-inhibit-lock t)
-;(setq auto-save-mode t)
-;(desktop-save-mode 1)
+(setq backup-inhibit-lock t)
+(setq auto-save-mode t)
+(desktop-save-mode 1)
 
 (setq url-proxy-services '(("no_proxy" . "^\\(localhost\\|10\\..*\\|192\\.168\\..*\\)") ("http" . "127.0.0.1:7890") ("https" . "127.0.0.1:7890")))
 

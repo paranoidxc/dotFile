@@ -42,7 +42,9 @@ IF GREP-P is nil, find file"
 (defun my-search-text-in-project ()
   "Search text of file in project root directory."
   (interactive)
-  (my-search-internal (locate-dominating-file default-directory ".git") t))
+  (my-search-internal (or (locate-dominating-file default-directory ".git")
+                          (locate-dominating-file default-directory ".svn"))
+                      t))
 
 (defun my-search-text (&optional level)
   "Serch text of file in current directory or LEVEL parent directory "
@@ -88,8 +90,8 @@ IF GREP-P is nil, find file"
 (defun my-find-file-in-project ()
   "Find file in project root directory."
   (interactive)
-  (my-find-file-internal (locate-dominating-file default-directory ".git"))
-  )
+  (my-find-file-internal (or (locate-dominating-file default-directory ".git")
+                             (locate-dominating-file default-directory ".svn"))))
 
 (defun my-find-file (&optional level)
   "Find file in current directory or LEVEL parent directory "
