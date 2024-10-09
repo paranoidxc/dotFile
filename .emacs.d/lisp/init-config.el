@@ -30,4 +30,12 @@
 ;; 这一行代码，将函数 open-init-file 绑定到 <f2> 键上
 (global-set-key (kbd "<f2>") 'open-init-file)
 
+
+; When t (the default), the user is asked before every code
+;      block evaluation.  When ‘nil’, the user is not asked.  When
+;      set to a function, it is called with two arguments (language
+;      and body of the code block) and should return t to ask and
+;      ‘nil’ not to ask.
+(setq org-confirm-babel-evaluate nil)
+
 (provide 'init-config)
