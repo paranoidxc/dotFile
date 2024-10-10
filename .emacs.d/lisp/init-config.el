@@ -38,4 +38,10 @@
 ;      ‘nil’ not to ask.
 (setq org-confirm-babel-evaluate nil)
 
+(setq elisp-autofmt-python-bin "python3")
+
+;; 设置垃圾回收参数
+(setq gc-cons-threshold most-positive-fixnum)
+(setq gc-cons-percentage 0.6)
+
 (provide 'init-config)
