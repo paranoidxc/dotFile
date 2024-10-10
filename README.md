@@ -33,3 +33,9 @@ For now Dirvish ships with these attributes:
 --- MacOS
 
 brew install coreutils fd poppler ffmpegthumbnailer mediainfo imagemagick
+
+
+brew install ctags
+
+/usr/local/bin/ctags -e -R  --exclude=".#*"
+/usr/local/bin/ctags -e -R --exclude="subdir1/*" --exclude="*/subdir1/*" --exclude=".#*"

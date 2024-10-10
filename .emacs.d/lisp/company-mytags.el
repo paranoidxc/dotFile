@@ -65,5 +65,5 @@
 (setq company-backends '(company-mytags))
 (provide 'company-mytags)
 
-;;; company-mytags.el ends here
 
+;;; company-mytags.el ends here
