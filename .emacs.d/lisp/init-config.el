@@ -44,4 +44,22 @@
 (setq gc-cons-threshold most-positive-fixnum)
 (setq gc-cons-percentage 0.6)
 
+(defun mymsg ()
+  (interactive)
+  (message "ECHO"))
+
+
+;(setq key-chord-two-keys-delay 0.5)
+;(local-set-key (kbd ",ff") 'mymsg)
+;(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+;(key-chord-mode 1)
+
+
+
+;(define-key key-translation-map (kbd "A") (kbd "M-g A"))
+;(global-set-key (kbd "M-g A") 'mymsg)
+
+(global-set-key "\C-ca" 'org-agenda)
+
 (provide 'init-config)
+

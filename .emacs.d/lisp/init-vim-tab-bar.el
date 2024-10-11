@@ -167,8 +167,7 @@ FRAME is the frame."
                         :family 'unspecified
                         :foundry 'unspecified
                         :width 'unspecified
-                        ;:height 'unspecified
-                        :height 30
+                        :height 'unspecified
                         :weight 'unspecified
                         :slant 'unspecified
                         :underline 'unspecified
@@ -186,8 +185,7 @@ FRAME is the frame."
                         :family 'unspecified
                         :foundry 'unspecified
                         :width 'unspecified
-                        ;:height 'unspecified
-                        :height 30
+                        :height 'unspecified
                         :weight 'unspecified
                         :slant 'unspecified
                         :underline 'unspecified
@@ -205,8 +203,7 @@ FRAME is the frame."
                         :family 'unspecified
                         :foundry 'unspecified
                         :width 'unspecified
-                        ;:height 'unspecified
-                        :height 30
+                        :height 'unspecified
                         :weight 'unspecified
                         :slant 'unspecified
                         :underline 'unspecified
@@ -224,8 +221,7 @@ FRAME is the frame."
                         :family 'unspecified
                         :foundry 'unspecified
                         :width 'unspecified
-                        ;:height 'unspecified
-                        :height 30
+                        :height 'unspecified
                         :weight 'unspecified
                         :slant 'unspecified
                         :underline 'unspecified
@@ -243,8 +239,7 @@ FRAME is the frame."
                         :family 'unspecified
                         :foundry 'unspecified
                         :width 'unspecified
-                        ;:height 'unspecified
-                        :height 30
+                        :height 'unspecified
                         :weight 'unspecified
                         :slant 'unspecified
                         :underline 'unspecified
@@ -262,8 +257,7 @@ FRAME is the frame."
                         :family 'unspecified
                         :foundry 'unspecified
                         :width 'unspecified
-                        ;:height 'unspecified
-                        :height 30
+                        :height 'unspecified
                         :weight 'unspecified
                         :slant 'unspecified
                         :underline 'unspecified

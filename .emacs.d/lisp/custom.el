@@ -126,13 +126,6 @@ IF GREP-P is nil, find file"
     (my-find-file-internal parent-directory)))
 
 
-(defun clear-messages-buffer ()
-  (interactive)
-  (let ((inhibit-read-only t))
-    (with-current-buffer "*Messages*"
-      (erase-buffer))))
-
-
 (provide 'custom)
 
 ;;}}
