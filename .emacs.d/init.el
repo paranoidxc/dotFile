@@ -12,5 +12,6 @@
 (require 'init-org)
 (require 'init-ui)
 (require 'init-config)
+(require 'init-handy)
 
 (provide 'init)
