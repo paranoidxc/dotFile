@@ -76,7 +76,7 @@
 (defun company-mytags-prefix ()
   (company-grab-symbol))
 
-(defun mycompany (command &optional arg &rest _ignored)
+(defun my-company (command &optional arg &rest _ignored)
   (interactive (list 'interactive))
   (cl-case
    command
@@ -85,7 +85,7 @@
    (candidates (company-mytags-candidates arg))))
 
 
-(setq company-backends '(mycompany))
-(provide 'mycompany)
+(setq company-backends '(my-company))
+(provide 'my-company)
 
 ;;; mycompany.el ends here
