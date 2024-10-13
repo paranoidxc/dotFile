@@ -14,6 +14,7 @@ M-x package-install <RET>
 projectile
 php-mode
 all-the-icons
+winum
  ```
 
 ## evil mode
