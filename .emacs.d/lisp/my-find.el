@@ -126,6 +126,6 @@ IF GREP-P is nil, find file"
     (my-find-file-internal parent-directory)))
 
 
-(provide 'custom)
+(provide 'my-find)
 
 ;;}}

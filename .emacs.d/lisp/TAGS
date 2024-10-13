@@ -1,71 +1,10 @@
 
-init-const.el,225
-(defconst *is-mac* (eq system-type 'darwin))*is-mac*1,0
-(defconst *is-linux* (eq system-type 'gnu/linux))*is-linux*2,45
-(defconst *is-windows* (or (eq system-type 'ms-dos) (eq system-type 'windows-nt)))*is-windows*3,95
+nav_demo/bye.js,120
+function bye1() {bye11,0
+function bye2() {bye25,22
+function hello1() {hello19,44
+function hello2() {hello213,68
 
-mycompany.el,292
-(defun company-mytags-scan-project-root ()company-mytags-scan-project-root6,47
-(defun company-mytags-candidates (prefix)company-mytags-candidates34,828
-(defun company-mytags-prefix ()company-mytags-prefix49,1248
-(defun mycompany (command &optional arg &rest _ignored)mycompany52,1306
-
-init-vim-tab-bar.el,1106
-(defvar ct/circle-numbers-alistct/circle-numbers-alist41,1584
-(defgroup vim-tab-bar nilvim-tab-bar55,1841
-(defcustom vim-tab-bar-show-groups nilvim-tab-bar-show-groups61,2033
-(defun vim-tab-bar--default-format-tab-name (name)vim-tab-bar--default-format-tab-name66,2145
-(defun vim-tab-bar--default-format-group-name (name)vim-tab-bar--default-format-group-name70,2260
-(defcustom vim-tab-bar-update-tab-name-functionvim-tab-bar-update-tab-name-function74,2377
-(defcustom vim-tab-bar-update-group-name-functionvim-tab-bar-update-group-name-function81,2626
-(defvar vim-tab-bar--after-load-theme-hook nilvim-tab-bar--after-load-theme-hook88,2885
-(defun vim-tab-bar--name-format-function (tab i)vim-tab-bar--name-format-function91,2995
-(defun vim-tab-bar--group-format-function (tab i &optional current-p)vim-tab-bar--group-format-function111,3775
-(defun vim-tab-bar--apply (&optional frame)vim-tab-bar--apply126,4392
-(defun vim-tab-bar--run-after-load-theme-hook (&rest _args)vim-tab-bar--run-after-load-theme-hook296,11935
-(define-minor-mode vim-tab-bar-modevim-tab-bar-mode301,12130
-
-init-ml.el,0
-
-custom.el,473
-(defun my-search-internal (directory &optional grep-p)my-search-internal5,42
-(defun my-search-text-in-project ()my-search-text-in-project53,1785
-(defun my-search-text (&optional level)my-search-text62,2122
-(defun my-find-file-internal (directory)my-find-file-internal79,2647
-(defun my-find-file-in-project ()my-find-file-in-project105,3701
-(defun my-find-file (&optional level)my-find-file112,3935
-(defun clear-messages-buffer ()clear-messages-buffer129,4450
-
-init-config.el,47
-(defun open-init-file()open-init-file26,1215
-
-flycheck_company-mytags.el,302
-(defun company-mytags-scan-project-root ()company-mytags-scan-project-root6,47
-(defun company-mytags-candidates (prefix)company-mytags-candidates39,972
-(defun company-mytags-prefix ()company-mytags-prefix54,1364
-(defun company-mytags (command &optional arg &rest _ignored)company-mytags57,1422
-
-init-elpa.el,0
-
-init-ui.el,0
-
-init-package.el,98
-(define-key projectile-mode-map (kbd "M-p") 'projectile-command-map)projectile-mode-map188,6350
-
-subdir1/hello.el,47
-(defun hello()hello1,0
-(defun bye()bye4,43
-
-init-startup.el,0
-
-init-handy.el,0
-
-init-kbd.el,0
-
-company-mytags.el,302
-(defun company-mytags-scan-project-root ()company-mytags-scan-project-root6,47
-(defun company-mytags-candidates (prefix)company-mytags-candidates39,972
-(defun company-mytags-prefix ()company-mytags-prefix54,1364
-(defun company-mytags (command &optional arg &rest _ignored)company-mytags57,1422
-
-init-org.el,0
+nav_demo/hello.js,63
+function hello1() {hello11,0
+function hello2() {hello25,24
