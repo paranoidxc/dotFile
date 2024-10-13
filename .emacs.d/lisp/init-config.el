@@ -1,20 +1,56 @@
-(setq tab-bar-close-button-show nil)       ;; hide tab close / X button
-(setq tab-bar-new-button-show nil)       ;; hide tab close / X button
+(setq tab-bar-close-button-show nil) ;; hide tab close / X button
+(setq tab-bar-new-button-show nil) ;; hide tab close / X button
 (setq tab-bar-tab-hints t)
 (require 'init-vim-tab-bar)
 (setq vim-tab-bar-mode t)
-(global-set-key (kbd "M-1") (lambda () (interactive) (tab-bar-select-tab 1)))
-(global-set-key (kbd "M-2") (lambda () (interactive) (tab-bar-select-tab 2)))
-(global-set-key (kbd "M-3") (lambda () (interactive) (tab-bar-select-tab 3)))
-(global-set-key (kbd "M-4") (lambda () (interactive) (tab-bar-select-tab 4)))
-(global-set-key (kbd "M-5") (lambda () (interactive) (tab-bar-select-tab 5)))
-(global-set-key (kbd "M-6") (lambda () (interactive) (tab-bar-select-tab 6)))
-(global-set-key (kbd "M-7") (lambda () (interactive) (tab-bar-select-tab 7)))
-(global-set-key (kbd "M-8") (lambda () (interactive) (tab-bar-select-tab 8)))
-(global-set-key (kbd "M-9") (lambda () (interactive) (tab-bar-select-tab 9)))
+(global-set-key
+ (kbd "M-1")
+ (lambda ()
+   (interactive)
+   (tab-bar-select-tab 1)))
+(global-set-key
+ (kbd "M-2")
+ (lambda ()
+   (interactive)
+   (tab-bar-select-tab 2)))
+(global-set-key
+ (kbd "M-3")
+ (lambda ()
+   (interactive)
+   (tab-bar-select-tab 3)))
+(global-set-key
+ (kbd "M-4")
+ (lambda ()
+   (interactive)
+   (tab-bar-select-tab 4)))
+(global-set-key
+ (kbd "M-5")
+ (lambda ()
+   (interactive)
+   (tab-bar-select-tab 5)))
+(global-set-key
+ (kbd "M-6")
+ (lambda ()
+   (interactive)
+   (tab-bar-select-tab 6)))
+(global-set-key
+ (kbd "M-7")
+ (lambda ()
+   (interactive)
+   (tab-bar-select-tab 7)))
+(global-set-key
+ (kbd "M-8")
+ (lambda ()
+   (interactive)
+   (tab-bar-select-tab 8)))
+(global-set-key
+ (kbd "M-9")
+ (lambda ()
+   (interactive)
+   (tab-bar-select-tab 9)))
 
-(setq mycustom-file (expand-file-name "~/.emacs.d/lisp/custom.el"))
-(load mycustom-file)
+(setq my-find-file (expand-file-name "~/.emacs.d/lisp/my-find.el"))
+(load my-find-file)
 
 (setq custom-file (expand-file-name "~/.emacs.d/custom.el"))
 (load custom-file 'no-error 'no-message)
@@ -23,7 +59,7 @@
 (global-auto-revert-mode 1)
 
 ;; 快速打开配置文件
-(defun open-init-file()
+(defun open-init-file ()
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
@@ -37,7 +73,6 @@
 ;      and body of the code block) and should return t to ask and
 ;      ‘nil’ not to ask.
 (setq org-confirm-babel-evaluate nil)
-
 (setq elisp-autofmt-python-bin "python3")
 
 ;; 设置垃圾回收参数
@@ -55,11 +90,14 @@
 ;(key-chord-mode 1)
 
 
-
 ;(define-key key-translation-map (kbd "A") (kbd "M-g A"))
 ;(global-set-key (kbd "M-g A") 'mymsg)
 
 (global-set-key "\C-ca" 'org-agenda)
 
-(provide 'init-config)
+;(global-set-key "M-x C-c ff" 'my-find-file)
+;(global-set-key (kbd "M-x ,ff") 
+(defalias 'ff 'my-find-file)
+(defalias 'fp 'my-find-file)
 
+(provide 'init-config)

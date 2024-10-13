@@ -12,3 +12,4 @@
 .emacs.d/transient/history.el
 .emacs.d/lisp/TAGS
 *.elc
+.#*
