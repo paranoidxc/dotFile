@@ -96,17 +96,30 @@
 (global-set-key "\C-ca" 'org-agenda)
 
 ;(global-set-key "M-x C-c ff" 'my-find-file)
-;(global-set-key (kbd "M-x ,ff") 
-(defalias 'ff 'my-find-file)
-(defalias 'fp 'my-find-file)
+;(global-set-key (kbd "M-x ,ff")
+;(defalias 'ff 'my-find-file)
+;(defalias 'fp 'my-find-file)
 
 (define-prefix-command 'my-leader)
-(global-set-key (kbd ",") 'my-leader)
-(global-set-key (kbd ", ff") (lambda () (interactive) (my-find-file)))
+;(global-set-key (kbd ",") 'my-leader)
+;(global-set-key (kbd ",,") (lambda() ( (interactive) (insert ",")))
+;(global-set-key (kbd ", ff") (lambda () (interactive) (my-find-file)))
+
 ;(global-set-key (kbd ", 1") 'winum-select-window-1)
 ;(global-set-key (kbd ", 2") 'winum-select-window-2)
 ;(global-set-key (kbd ", 3") (lambda () (interactive) (winum-select-window-3)))
 ;(global-set-key (kbd ", 4") (lambda () (interactive) (winum-select-window-4)))
+
+;(keymap-set evil-motion-state-map "," 'my-leader)
+(keymap-set evil-normal-state-map "," 'my-leader)
+(evil-define-key nil my-leader
+    ;; add your bindings here:
+    "ff"  'my-find-file
+    ;; "B"  'project-switch-to-buffer
+    ;; "pf" 'project-find-file
+    ;; "ps" 'project-shell-command
+    ;; etc.
+    )
 
 (setq winum-keymap
     (let ((map (make-sparse-keymap)))
