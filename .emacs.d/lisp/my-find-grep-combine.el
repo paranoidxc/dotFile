@@ -48,6 +48,40 @@ IF GREP-P is nil, find file"
             (goto-char (point-min))
             (forward-line (1- (string-to-number linenum))))))))
 
+;; (defgroup my-find-group-config nil
+;;   "Non-nil if my-find-group-config mode mode is enabled."
+;;   :group 'my-find-group-config
+;;   :prefix "my-find-group-config-"
+;;   :link '(url-link "https://github.com/jamescherti/my-find-group-config.el"))
+
+;; (defgroup my-find-grep-config nil
+;;   :group 'my-find-grep-config
+;;   :prefix "my-find-grep-config-"
+;;   :version "0.1")
+
+(defgroup my-find-group-config nil
+  "Non-nil if my-find-group-config mode mode is enabled."
+  :group 'my-find-group-config
+  :prefix "my-find-group-config-"
+  :link '(url-link "https://github.com/jamescherti/my-find-group-config.el"))
+
+(defcustom my-find-group-config-project-hits nil
+  "Show groups in the tab-bar."
+  :type '(repeat symbol)
+;;  :initialize '()
+  :group 'my-find-group-config)
+
+
+;; (defcustom my-find-grep-project-hint t
+;;   :type 'list
+;;   :initialize '( .prod .git .svn)
+;;   :set (lambda (sym val)
+;;          (set-default sym val)
+;;          (force-mode-line-update))
+;;   :group 'my-find-grep-config
+;;   :version "0.1")
+
+
 (defun get-search-directory ()
   (or (locate-dominating-file default-directory ".prod")
       (locate-dominating-file default-directory ".git")
@@ -63,6 +97,7 @@ Grep file start keyword with comma"
   (interactive)
   (let* ((keyword (read-string "Find/Grep(prefix with,) keyword: "))
 	 search-directory)
+    ;(message my-find-group-config-project-hits)
     ;; (message (format "keyword=%s" keyword))
     ;; (message (format "search-dir=%s" (get-search-directory)))
     (when (not (string= keyword ""))
