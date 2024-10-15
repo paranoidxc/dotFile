@@ -114,7 +114,7 @@
 (keymap-set evil-normal-state-map "," 'my-leader)
 (evil-define-key nil my-leader
     ;; add your bindings here:
-    "ff"  'my-find-file
+    "ff"  'my-find-grep-combine
     ;; "B"  'project-switch-to-buffer
     ;; "pf" 'project-find-file
     ;; "ps" 'project-shell-command

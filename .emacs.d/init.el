@@ -13,5 +13,6 @@
 (require 'init-ui)
 (require 'init-config)
 (require 'init-handy)
+(require 'my-find-grep-combine)
 
 (provide 'init)
