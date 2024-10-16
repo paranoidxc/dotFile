@@ -7,6 +7,8 @@
 IF GREP-P is t, grep file instead
 IF GREP-P is nil, find file"
     (when (not (string= keyword ""))
+      (message "grep-p=%s" grep-p)
+      (message "directory=%s" directory)
       (let*
           ((find-cmd
             (format
@@ -63,12 +65,12 @@ IF GREP-P is nil, find file"
   "Non-nil if my-find-group-config mode mode is enabled."
   :group 'my-find-group-config
   :prefix "my-find-group-config-"
-  :link '(url-link "https://github.com/jamescherti/my-find-group-config.el"))
+  :link '(url-link "https://github.com/paranoidxc/xxxx.el"))
 
 (defcustom my-find-group-config-project-hits nil
   "Show groups in the tab-bar."
   :type '(repeat symbol)
-;;  :initialize '()
+  ;;:initialize (init-prod-list)
   :group 'my-find-group-config)
 
 
@@ -81,6 +83,48 @@ IF GREP-P is nil, find file"
 ;;   :group 'my-find-grep-config
 ;;   :version "0.1")
 
+
+(setq prod-list '(".prod" ".git" ".svn"))
+
+(defun init-prod-list ()
+  prod-list)
+
+(defun opposite-type (ident)
+  (if (equal ident ".")
+      ","
+    "."))
+
+(defun inner-type (keyword ident)
+  (cond
+   ((equal (substring keyword 0 1) ident)
+	t)
+   ((>= (length keyword) 2)
+    (if
+	(and (equal (substring keyword 0 1) (opposite-type ident))
+	     (equal (substring keyword 1 2) ident))
+	t
+      nil))
+   (t nil)))
+
+(defun is-current-directory (keyword)
+  (inner-type keyword "."))
+
+(defun is-grep (keyword)
+  (inner-type keyword ","))
+
+(defun trim-keyword (keyword)
+  (let ((c (substring keyword 0 1)))
+    (if (or (equal c ".") (equal c ","))
+	(trim-keyword (substring keyword 1 (length keyword)))
+      keyword)))
+  
+(defun get-prod-directory (tmp-prod-list)
+ (if (equal (length tmp-prod-list) 0)
+     nil
+   (let* ((path (locate-dominating-file default-directory (car tmp-prod-list))))
+     (if path
+	 path
+       (get-prod-directory (cdr tmp-prod-list))))))
 
 (defun get-search-directory ()
   (or (locate-dominating-file default-directory ".prod")
@@ -97,16 +141,23 @@ Grep file start keyword with comma"
   (interactive)
   (let* ((keyword (read-string "Find/Grep(prefix with,) keyword: "))
 	 search-directory)
-    ;(message my-find-group-config-project-hits)
+    ;; (message my-find-group-config-project-hits)
     ;; (message (format "keyword=%s" keyword))
     ;; (message (format "search-dir=%s" (get-search-directory)))
     (when (not (string= keyword ""))
-      (setq search-directory (get-search-directory))
+      ;; (setq search-directory (get-search-directory))
+      (setq search-directory
+	    (if (equal (is-current-directory keyword) nil)
+		nil
+	      (get-prod-directory prod-list)))
+      (setq clean-keyword (trim-keyword keyword))
       (cond
-       ((equal (substring keyword 0 1) ",")
-	(my-find-grep-internal (substring keyword 1 (length keyword)) search-directory t))
+        ;; ((equal (substring keyword 0 1) ",")
+       ((is-grep keyword)
+	;;(my-find-grep-internal (substring keyword 1 (length keyword)) search-directory t))
+	(my-find-grep-internal clean-keyword search-directory t))
        (t
-	(my-find-grep-internal keyword search-directory))))))
+	(my-find-grep-internal clean-keyword search-directory))))))
 
 (provide 'my-find-grep-combine)
 ;;; my-find-grep-combine.el ends here

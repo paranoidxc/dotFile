@@ -115,6 +115,7 @@
 (evil-define-key nil my-leader
     ;; add your bindings here:
     "ff"  'my-find-grep-combine
+    "fd"  'dirvish
     ;; "B"  'project-switch-to-buffer
     ;; "pf" 'project-find-file
     ;; "ps" 'project-shell-command
