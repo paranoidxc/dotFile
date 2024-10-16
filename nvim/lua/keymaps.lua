@@ -7,9 +7,12 @@ vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", {})
 vim.keymap.set("n", "<leader>th", ":Telescope colorscheme<CR>", {})
 vim.keymap.set("n", "<leader>of", ":Telescope oldfiles<CR>", {})
 vim.keymap.set("n", "<leader>km", ":Telescope keymaps<CR>", {})
-vim.keymap.set("n", "<leader>lp", ":Telescope lsp_document_symbols<CR>")
+vim.keymap.set("n", "<leader>ls", ":Telescope lsp_document_symbols<CR>")
 vim.keymap.set("n", "<leader>lr", ":Telescope lsp_references<CR>")
 vim.keymap.set("n", "<leader>ld", ":Telescope lsp_definitions<CR>")
+vim.keymap.set("n", "<leader>bw", ":Telescope current_buffer_fuzzy_find<CR>")
+vim.keymap.set("n", "<leader>bl", ":Telescope buffers<CR>")
+vim.keymap.set("n", "<leader>df", ":lua require 'telescope'.extensions.file_browser.file_browser()<CR>")
 
 vim.keymap.set("n", "<leader>ft", vim.lsp.buf.format, {})
 
