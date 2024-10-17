@@ -30,6 +30,14 @@ return {
 
 			local lspconfig = require("lspconfig")
 
+			local servers = { "tailwindcss", "jsonls", "eslint" }
+			for _, lsp in pairs(servers) do
+				lspconfig[lsp].setup({
+					-- on_attach = on_attach,
+					capabilites = capabilities,
+				})
+			end
+
 			lspconfig.ts_ls.setup({
 				init_options = {
 					plugins = {
