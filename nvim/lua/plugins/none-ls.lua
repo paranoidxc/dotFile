@@ -10,6 +10,7 @@ return {
 				null_ls.builtins.formatting.clang_format,
 				null_ls.builtins.formatting.black,
 				null_ls.builtins.formatting.gdformat,
+				null_ls.builtins.formatting.html,
 			},
 		})
 	end,
