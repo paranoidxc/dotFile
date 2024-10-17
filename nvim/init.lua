@@ -102,4 +102,5 @@ if vim.g.neovide then
 	vim.o.guifont = "JetBrainsMono Nerd Font:h18" -- text below applies for VimScript
 end
 
-require("lualine-cf")
+require("debugging")
+--require("lualine-cf")
