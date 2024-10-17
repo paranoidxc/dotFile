@@ -5,26 +5,28 @@ local lualine = require("lualine")
 
 -- Color table for highlights
 -- stylua: ignore
-local colors = {
-	bg       = '#202328',
-	fg       = '#bbc2cf',
-	yellow   = '#ECBE7B',
-	cyan     = '#008080',
-	darkblue = '#081633',
-	green    = '#98be65',
-	orange   = '#FF8800',
-	violet   = '#a9a1e1',
-	magenta  = '#c678dd',
-	blue     = '#51afef',
-	red      = '#ec5f67',
-	blue     = "#80a0ff",
-	cyan     = "#79dac8",
-	black    = "#080808",
-	white    = "#c6c6c6",
-	red      = "#ff5189",
-	violet   = "#d183e8",
-	grey     = "#303030",
-}
+-- local colors = {
+-- 	bg       = '#202328',
+-- 	fg       = '#bbc2cf',
+-- 	yellow   = '#ECBE7B',
+-- 	cyan     = '#008080',
+-- 	darkblue = '#081633',
+-- 	green    = '#98be65',
+-- 	orange   = '#FF8800',
+-- 	violet   = '#a9a1e1',
+-- 	magenta  = '#c678dd',
+-- 	blue     = '#51afef',
+-- 	red      = '#ec5f67',
+-- 	blue     = "#80a0ff",
+-- 	cyan     = "#79dac8",
+-- 	black    = "#080808",
+-- 	white    = "#c6c6c6",
+-- 	red      = "#ff5189",
+-- 	violet   = "#d183e8",
+-- 	grey     = "#303030",
+-- }
+
+local colors = require("tokyonight.colors").setup({})
 
 local conditions = {
 	buffer_not_empty = function()
@@ -65,7 +67,8 @@ local config = {
 		component_separators = "",
 		section_separators = "",
 		section_separators = { left = "", right = "" },
-		theme = bubbles_theme,
+		-- theme = bubbles_theme,
+		-- theme = bubbles_theme,
 		-- theme = {
 		-- 	-- We are going to use lualine_c an lualine_x as left and
 		-- 	-- right section. Both are highlighted by c theme .  So we

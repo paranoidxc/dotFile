@@ -102,5 +102,11 @@ if vim.g.neovide then
 	vim.o.guifont = "JetBrainsMono Nerd Font:h18" -- text below applies for VimScript
 end
 
+require("telescope").load_extension("floaterm")
 require("debugging")
---require("lualine-cf")
+
+require("lualine-cf2")
+-- require("lualine").setup({
+-- 	options = { theme = "tokyonight" },
+-- })
+-- require("lualine-cf2")

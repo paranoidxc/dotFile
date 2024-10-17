@@ -9,6 +9,11 @@ vim.keymap.set("n", "<leader>of", ":Telescope oldfiles<CR>", {})
 vim.keymap.set("n", "<leader>km", ":Telescope keymaps<CR>", {})
 vim.keymap.set("n", "<leader>ls", ":Telescope lsp_document_symbols<CR>")
 vim.keymap.set("n", "<leader>lm", ":Telescope lsp_document_symbol({symbols = { 'Method' }})<CR>")
+vim.keymap.set(
+	"n",
+	"<leader>lm",
+	":lua require('telescope.builtin').lsp_document_symbols({symbols = { 'Method' }})<CR>"
+)
 vim.keymap.set("n", "<leader>lr", ":Telescope lsp_references<CR>")
 vim.keymap.set("n", "<leader>ld", ":Telescope lsp_definitions<CR>")
 vim.keymap.set("n", "<leader>bw", ":Telescope current_buffer_fuzzy_find<CR>")
@@ -116,3 +121,8 @@ vim.keymap.set("n", "gn", ":lua vim.diagnostic.goto_next()<CR>")
 
 -- map("n", "<C-d>", [[:NvimTreeToggle<CR> :lua require'dapui'.toggle()<CR>]], {})
 --vim.keymap.set("n", "<C-d>", "::NvimTreeToggle<CR> :lua require'dapui'.toggle()<CR>")
+
+-- Telescope floaterm
+vim.keymap.set("n", "<leader>tl", ":Telescope floaterm<CR>")
+vim.keymap.set("n", "<leader>tf", ":FloatermNew()<CR>")
+vim.keymap.set("n", "<leader>tt", ":FloatermToggle()<CR>")
