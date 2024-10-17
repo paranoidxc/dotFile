@@ -9,7 +9,7 @@ return {
 				layout_config = {
 					horizontal = { preview_cutoff = 0 },
 				},
-
+				file_ignore_patterns = { "^soft/", "^assets/", "^vendor/", "*runtime/*", "^themes/", "^dist/" },
 				border = true,
 			},
 

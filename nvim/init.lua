@@ -35,6 +35,12 @@ require("lazy").setup({
 
 require("keymaps")
 
+require("nvim-window").setup({
+	hint_hl = "Bold",
+	border = "single",
+	render = "float",
+})
+
 -- vim.cmd.colorscheme("monokai-pro")
 -- vim.cmd.colorscheme("dracula")
 vim.cmd.colorscheme("tokyonight-moon")
@@ -90,5 +96,10 @@ end, { remap = true })
 
 vim.api.nvim_set_keymap("i", "ss", "$$", { silent = true, expr = false, noremap = true })
 vim.api.nvim_set_keymap("i", "iee", "if err != nil {}", { silent = true, expr = false, noremap = true })
+
+if vim.g.neovide then
+	-- vim.o.guifont = "DejaVuSansMono Nerd Font:h18" -- text below applies for VimScript
+	vim.o.guifont = "JetBrainsMono Nerd Font:h18" -- text below applies for VimScript
+end
 
 require("lualine-cf")
