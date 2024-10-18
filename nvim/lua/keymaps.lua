@@ -1,5 +1,5 @@
 vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left toggle<CR>")
-vim.keymap.set("n", "<leader>e", ":Neotree focus<CR>")
+vim.keymap.set("n", "<leader>n", ":Neotree focus<CR>")
 
 vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", {})
 vim.keymap.set("n", "<leader>fw", ":Telescope live_grep<CR>", {})
@@ -8,7 +8,7 @@ vim.keymap.set("n", "<leader>th", ":Telescope colorscheme<CR>", {})
 vim.keymap.set("n", "<leader>of", ":Telescope oldfiles<CR>", {})
 vim.keymap.set("n", "<leader>km", ":Telescope keymaps<CR>", {})
 vim.keymap.set("n", "<leader>ls", ":Telescope lsp_document_symbols<CR>")
-vim.keymap.set("n", "<leader>lm", ":Telescope lsp_document_symbol({symbols = { 'Method' }})<CR>")
+-- vim.keymap.set("n", "<leader>lm", ":Telescope lsp_document_symbol({symbols = { 'Method' }})<CR>")
 vim.keymap.set(
 	"n",
 	"<leader>lm",
@@ -66,7 +66,7 @@ vim.keymap.set("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>")
 vim.keymap.set("n", "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>")
 
 -- go xx
-
+vim.keymap.set("n", "gD", ":lua vim.lsp.buf.type_definition()<CR>")
 -- mapbuf("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
 vim.keymap.set("n", "gd", ":lua vim.lsp.buf.definition()<CR>")
 
@@ -97,7 +97,6 @@ vim.keymap.set("n", "gn", ":lua vim.diagnostic.goto_next()<CR>")
 -- mapbuf('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opt)
 -- mapbuf('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opt)
 -- mapbuf('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opt)
--- mapbuf('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opt)
 
 -- nvim-dap keymappings
 -- Press f5 to debug
