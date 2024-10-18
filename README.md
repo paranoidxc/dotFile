@@ -4,9 +4,28 @@
 
 ## NVIM
 
+### GO + PHP + JS + VUE
+
+### node v20.18 前端火葬场
+
+$ npm install -g typescript vscode-langservers-extracted @tailwindcss/language-server
+
+# html / css 的 自动补全
+$ npm install -g vscode-html-languageservice
+
+# js / ts 的自动补全
+$ npm install -g typescript-language-server
+
+# vue 的 自动补全
+$ npm install -g @vue/language-server
+
+# 进入一个 vue 项目，局部安装一个 typescript
+npm install --save typescript
 
 
 ## EMACS
+
+### GO + PHP
 
  ```
 emacs cmd
