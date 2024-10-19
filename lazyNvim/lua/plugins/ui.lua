@@ -22,7 +22,24 @@ return {
     lazy = false,
     priority = 1000,
     opts = {},
-  }, -- windows picker
+  },
+  --- float terminal
+  {
+    "voldikss/vim-floaterm",
+    config = function()
+      vim.g.floaterm_shell = "fish"
+      vim.g.floaterm_title = "Fucking The World"
+      vim.g.floaterm_width = 0.8
+      vim.g.floaterm_height = 0.8
+    end,
+  },
+  {
+    "dawsers/telescope-floaterm.nvim",
+    dependencies = {
+      "voldikss/vim-floaterm",
+    },
+  },
+  -- windows picker
   {
     "yorickpeterse/nvim-window",
     keys = {

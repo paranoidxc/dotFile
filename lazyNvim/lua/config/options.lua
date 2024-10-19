@@ -29,7 +29,7 @@ vim.opt.wildignore:append({ "*/node_modules/*" })
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.splitkeep = "cursor"
-vim.opt.mouse = ""
+-- vim.opt.mouse = ""
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })

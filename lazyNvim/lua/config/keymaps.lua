@@ -20,6 +20,12 @@ keymap.set("n", "<Leader>Q", ":qa<Return>", opts)
 -- File explorer with NvimTree
 keymap.set("n", "<Leader>f", ":NvimTreeFindFile<Return>", opts)
 keymap.set("n", "<Leader>t", ":NvimTreeToggle<Return>", opts)
+keymap.set("n", "<Leader>n", ":Neotree focus<Return>", opts)
+
+-- float terminal
+keymap.set("n", "<Leader>tl", ":Telescope floaterm<Return>", opts)
+keymap.set("n", "<Leader>tf", ":FloatermNew --height=0.8 --width=0.8<Return>", opts)
+keymap.set("n", "<Leader>tt", ":FloatermToggle<Return>", opts)
 
 -- Tabs
 keymap.set("n", "te", ":tabedit")
