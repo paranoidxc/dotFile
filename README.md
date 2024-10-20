@@ -2,7 +2,29 @@
 
 双配置 GO + PHP
 
+## SCREENSHOT
+
+![Screen Shot 2024-10-20 at 17.42.08](README.assets/Screen Shot 2024-10-20 at 17.42.08.png)
+
+
+
+![Screen Shot 2024-10-20 at 17.43.13](README.assets/Screen Shot 2024-10-20 at 17.43.13.png)
+
+
+
+![Screen Shot 2024-10-20 at 17.45.15](README.assets/Screen Shot 2024-10-20 at 17.45.15.png)
+
+
+
+## wezterm
+
+## lazynvim
+
+基于lazynvim 配置
+
 ## NVIM
+
+自主配置
 
 ### GO + PHP + JS + VUE
 
