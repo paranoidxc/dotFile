@@ -18,7 +18,7 @@ return {
   -- color scheme
   -- colors = colors,
   -- color_scheme = "Gruvbox dark, medium (base16)",
-  font_size = 18,
+  font_size = 16,
   color_scheme = "Catppuccin Mocha",
 
   -- scrollbar
