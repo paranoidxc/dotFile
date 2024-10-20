@@ -119,6 +119,9 @@ local keys = {
       end),
     }),
   },
+
+  { key = "d", mods = mod.SUPER, action = wezterm.action.SendString("\x01\x2d") }, -- # ^b - vSplit window
+  { key = "D", mods = mod.SUPER_REV, action = wezterm.action.SendString("\x01\x5f") }, -- # ^b _ hSplit window
 }
 
 local key_tables = {
@@ -198,8 +201,8 @@ local mouse_bindings = {
 }
 
 return {
-  disable_default_key_bindings = true,
-  disable_default_mouse_bindings = true,
+  -- disable_default_key_bindings = true,
+  -- disable_default_mouse_bindings = true,
   leader = { key = "Space", mods = "CTRL|SHIFT" },
   keys = keys,
   key_tables = key_tables,
