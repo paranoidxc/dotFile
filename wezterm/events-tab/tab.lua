@@ -107,7 +107,7 @@ end
 return {
   enable_tab_bar = true,
   use_fancy_tab_bar = false,
-  -- tab_bar_at_bottom = false,
+  tab_bar_at_bottom = true,
   -- tab_bar_at_top = true,
   show_new_tab_button_in_tab_bar = true,
 }
