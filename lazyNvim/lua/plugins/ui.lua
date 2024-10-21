@@ -145,15 +145,15 @@ return {
     },
     opts = {
       options = {
-        -- themable = true,
-        -- separator_style = "slant",
-        -- diagnostics_indicator = function(count, level, diagnostics_dict, context)
-        --   local icon = level:match("error") and " " or " "
-        --   return " " .. icon .. count
-        -- end,
-        mode = "tabs",
-        show_buffer_close_icons = false,
-        show_close_icon = false,
+        themable = true,
+        separator_style = "slant",
+        diagnostics_indicator = function(count, level, diagnostics_dict, context)
+          local icon = level:match("error") and " " or " "
+          return " " .. icon .. count
+        end,
+        -- mode = "tabs",
+        -- show_buffer_close_icons = false,
+        -- show_close_icon = false,
       },
     },
   },
@@ -285,7 +285,8 @@ return {
           api.config.mappings.default_on_attach(bufnr)
 
           -- custom mappings
-          vim.keymap.set("n", "t", api.node.open.tab, opts("Tab"))
+          -- vim.keymap.set("n", "t", api.node.open.tab, opts("Tab"))
+          -- vim.keymap.set("n", "t", ":Neotree filesystem reveal left toggle<CR>")
         end,
         actions = {
           open_file = {
@@ -321,7 +322,8 @@ return {
       })
 
       if vim.fn.argc(-1) == 0 then
-        vim.cmd("NvimTreeFocus")
+        -- vim.cmd("NvimTreeFocus")
+        vim.cmd("Neotree filesystem reveal left toggle")
       end
     end,
   },

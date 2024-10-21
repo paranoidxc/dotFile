@@ -2,4 +2,4 @@
 require("config.lazy")
 vim.cmd.colorscheme("tokyonight-moon")
 
-require("config.lualine-cf2")
+-- require("config.lualine-cf2")
