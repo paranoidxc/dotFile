@@ -85,4 +85,7 @@ return {
       opacity = 0.95,
     },
   },
+
+  -- remove all application buttons
+  integrated_title_buttons = {},
 }

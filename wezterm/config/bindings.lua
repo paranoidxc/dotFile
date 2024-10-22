@@ -122,6 +122,10 @@ local keys = {
 
   { key = "d", mods = mod.SUPER, action = wezterm.action.SendString("\x01\x2d") }, -- # ^b - vSplit window
   { key = "D", mods = mod.SUPER_REV, action = wezterm.action.SendString("\x01\x5f") }, -- # ^b _ hSplit window
+
+  { key = "S", mods = mod.SUPER, action = wezterm.action({ EmitEvent = "save_session" }) },
+  { key = "L", mods = mod.SUPER, action = wezterm.action({ EmitEvent = "load_session" }) },
+  { key = "R", mods = mod.SUPER, action = wezterm.action({ EmitEvent = "restore_session" }) },
 }
 
 local key_tables = {
