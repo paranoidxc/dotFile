@@ -28,6 +28,15 @@ return {
         desc = "Lists files in your current working directory, respects .gitignore",
       },
       {
+        ";w",
+        function()
+          local builtin = require("telescope.builtin")
+          builtin.current_buffer_fuzzy_find()
+        end,
+        desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",
+      },
+
+      {
         ";r",
         function()
           local builtin = require("telescope.builtin")
@@ -82,9 +91,9 @@ return {
             respect_gitignore = false,
             hidden = true,
             grouped = true,
-            previewer = false,
+            previewer = true,
             initial_mode = "normal",
-            layout_config = { height = 40 },
+            layout_config = { height = 20 },
           })
         end,
         desc = "Open File Browser with the path of the current buffer",
@@ -105,16 +114,19 @@ return {
         file_ignore_patterns = {
           "^./.git/",
           "^node_modules/",
-          "^vendor/",
+          ".*upload/*",
+          ".*vendor/*",
           ".*assets/*",
           ".*themes/",
           ".*dist/",
           "*.soft/",
           ".*runtime/",
           ".*log",
+          ".*\\.bat",
         },
       })
       opts.pickers = {
+        colorscheme = { enable_preview = true },
         diagnostics = {
           theme = "ivy",
           initial_mode = "normal",
