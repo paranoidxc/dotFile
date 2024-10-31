@@ -70,9 +70,11 @@ return {
       },
       {
         ";s",
+        --  ":lua require('telescope.builtin').lsp_document_symbols({symbols = { 'Method' }})<CR>",
         function()
           local builtin = require("telescope.builtin")
-          builtin.treesitter()
+          -- builtin.treesitter()
+          builtin.lsp_document_symbols({ symbols = { "Method" } })
         end,
         desc = "Lists Function names, variables, from Treesitter",
       },
