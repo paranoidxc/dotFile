@@ -121,9 +121,9 @@ return {
           ".*assets/*",
           ".*themes/",
           ".*dist/",
-          "*.soft/",
+          ".*soft/",
           ".*runtime/",
-          ".*log",
+          ".*\\.log",
           ".*\\.bat",
         },
       })
