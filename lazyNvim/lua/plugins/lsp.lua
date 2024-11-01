@@ -149,6 +149,16 @@ return {
     dependencies = { "hrsh7th/cmp-emoji" },
     opts = function(_, opts)
       table.insert(opts.sources, { name = "emoji" })
+      opts.window = {
+        completion = {
+          border = "rounded",
+          winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+        },
+        documentation = {
+          border = "rounded",
+          winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+        },
+      }
     end,
   },
   {
