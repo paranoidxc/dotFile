@@ -327,4 +327,66 @@ return {
       end
     end,
   },
+  {
+    "nvim-orgmode/orgmode",
+    event = "VeryLazy",
+    ft = { "org" },
+    config = function()
+      -- Setup orgmode
+      require("orgmode").setup({
+        org_agenda_files = "~/orgfiles/**/*",
+        org_default_notes_file = "~/orgfiles/refile.org",
+        org_root = "~/orgfiles/",
+        org_capture_templates = {
+          T = { description = "Task", template = "* TODO %?\n  SCHEDULED: %t" },
+          t = "TODO",
+          -- tv = {
+          --   description = "Vim Tasks",
+          --   template = "* TODO %?\n  SCHEDULED: %t",
+          --   target = org_root .. "/vim.org",
+          -- },
+          -- ta = {
+          --   description = "AdSystem Tasks",
+          --   template = "* TODO %?\n  SCHEDULED: %t",
+          --   target = org_root .. "/adsystem.org",
+          -- },
+          -- tb = {
+          --   description = "Blog Tasks",
+          --   template = "* TODO %?\n  SCHEDULED: %t",
+          --   target = org_root .. "/blog.org",
+          -- },
+          ts = {
+            description = "Study Tasks",
+            template = "* TODO %?\n  SCHEDULED: %t",
+            target = "~/orgfiles/study.org",
+          },
+        },
+      })
+
+      -- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option
+      -- add ~org~ to ignore_install
+      -- require('nvim-treesitter.configs').setup({
+      --   ensure_installed = 'all',
+      --   ignore_install = { 'org' },
+      -- })
+    end,
+  },
+  -- {
+  --   "huggingface/llm.nvim",
+  --   opts = {
+  --     lsp = {
+  --       bin_path = vim.api.nvim_call_function("stdpath", { "data" }) .. "/mason/bin/llm-ls",
+  --     },
+  --     model = "llama3.2:3b",
+  --     url = "http://localhost:11434", -- llm-ls uses "/api/generate"
+  --     -- cf https://github.com/ollama/ollama/blob/main/docs/api.md#parameters
+  --     request_body = {
+  --       -- Modelfile options for the model you use
+  --       options = {
+  --         temperature = 0.2,
+  --         top_p = 0.95,
+  --       },
+  --     },
+  --   },
+  -- },
 }
