@@ -13,3 +13,4 @@
 .emacs.d/lisp/TAGS
 *.elc
 .#*
+lazyNvim/lazy-lock.json

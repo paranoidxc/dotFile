@@ -13,6 +13,7 @@ return {
         "tailwindcss-language-server",
         "typescript-language-server",
         "css-lsp",
+        "pyright",
       })
     end,
   },
@@ -127,6 +128,7 @@ return {
           },
         },
         clangd = {},
+        pyright = {},
         gopls = {
           format = {
             enable = true,
